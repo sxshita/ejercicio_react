@@ -7,11 +7,6 @@ const ItemListContainer = ({handlePage}) => {
     const [products, setProducts] = useState([]);
     
     //Componente contenedor encargado de la logica de estado
-    // useEffect(() => {
-    //     if(user === ''){
-    //         navigate('/login')
-    //     }
-    // }, [user, navigate])
     //La consulta de productos debe realizarse a la siguiente api pasando el query param correspondiente
     //https://api.mercadolibre.com/sites/MLA/search?q=
    const buscarProductos = () => {
@@ -20,7 +15,6 @@ const ItemListContainer = ({handlePage}) => {
            return r.json()
        })
        .then(json => {
-           console.log(json.results)
            setProducts(json.results)
        })
    }
